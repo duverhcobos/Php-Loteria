@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+}
+
+.tituloDestacado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fWrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    position: relative;
+
+    padding: 0;
+    margin: 5px;
+    width: 240px;
+    height: 400px;
+    background: var(--color-principal);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    background: var(--color-secundario);
+    width: 100%;
+    height: 100%;
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+
+.card:hover::before{
+    top: -70%;
+    transform: skewY(390deg);
+}
+
+.card::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 8em;
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.card .imgBox{
+    position: relative;
+    width: 100%;
+    min-height: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+    transition: 0.5s;
+}
+.card:hover .imgBox{
+
+    min-height: 40%;
+    height: 40%;
+
+}
+
+.card .imgBox img {
+    max-width: 100%;
+    transition: 0.5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 90%;
+}
+
+.card .contentBox {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.card .contentBox h3{
+    position: relative;
+    top: 70px;
+    font-size: 18px;
+    color: var(--color-texto-card);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+}
+
+.card .contentBox .botonVer{
+    position: relative;
+    top: 200px;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    text-decoration: none;
+    background: var(--color-botones);
+    color: #ffff;
+    border-radius:  30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.card:hover .contentBox .botonVer{
+
+    top: 80px;
+    opacity: 1;
+}
